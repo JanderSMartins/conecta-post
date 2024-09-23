@@ -28,7 +28,7 @@ def get_table_data(engine) :
 
 # Streamlit App
 st.title("Conexão ao PostgreSQL na AWS via Streamlit com SQLAlchemy")
-
+#  alterei
 # Conectar ao banco de dados
 engine = connect_to_db()
 
