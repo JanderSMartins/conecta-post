@@ -63,7 +63,10 @@ if pagina_selecionada == 'Conectar ao Financeiro':
         if df is not None :
             st.write("Dados da tabela financial_accounts:")
             st.dataframe(df)  # Exibe os dados em formato de tabela no Streamlit
-            st.metric(label="Total Amount" , value=sum(df['amount']))
+            value = sum(df['amount'])
+            formatted_value = f"{value:,.2f}".replace("," , "X").replace("." , ",").replace("X" , ".")
+            # formatted_value = f"{value:,.2f}"
+            st.metric(label="Total Amount" , value=formatted_value)
         else :
             st.error("Não foi possível obter os dados da tabela.")
     else :
